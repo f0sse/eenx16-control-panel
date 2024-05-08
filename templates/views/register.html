@@ -1,0 +1,71 @@
+<!--
+register.html
+lucas@pamorana.net (2024)
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+{{ define "views/register.html"}}
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<title>Control Panel - Registration</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			.bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			}
+			@media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+					font-size: 3.5rem;
+				}
+			}
+		</style>
+		<link href="/css/register.css" rel="stylesheet">
+	</head>
+	<body class="text-center">
+		<main class="form-signin">
+			<div class="info-card">
+				<div class="{{.info_animate}}"><p></p></div>
+				<div class="info-card info-card-box {{.info_animate}} {{ .info_type }}">
+					<label class="hash-user" for="hash">{{.hash_label}}</label>
+					<input id="hash" class="form-control rounded {{.hash_class}}" type="text" value="{{.hash_value}}" readonly {{.hash_focus}}>
+				</div>
+				<div class="{{.info_animate}}"><p></p></div>
+			</div>
+			<form method=post>
+				<h1 class="h3 mb-3 fw-normal">Registration form</h1>
+
+				<div class="form-floating">
+					<input type=text class="form-control" id="username" name="username" placeholder="Username" tabindex="1" required autofocus>
+					<label for="floatingInput">Username</label>
+				</div>
+				<div class="form-floating">
+					<input type="password" class="form-control" id="password" name="password" placeholder="Password" autocomplete="current-password" tabindex="2" required>
+					<label for="floatingPassword">Password</label>
+				</div>
+				<button class="w-100 btn btn-lg btn-primary" type="submit" tabindex="4">Register</button>
+			</form>
+		</main>
+	</body>
+</html>
+{{ end }}

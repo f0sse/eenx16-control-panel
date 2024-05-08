@@ -1,0 +1,384 @@
+/*
+ * signin.css
+ * lucas@pamorana.net (2024)
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+:root {
+	--bg-color: #4B6CA9;
+	--bg-secondary-color: #718FC5;
+	--color-primary: #2A4D6E;
+	--color-lightGrey: #7A9EDF;
+	--color-grey: #2C3D5A;
+	--color-darkGrey: #020203;
+	--color-error: #C68986;
+	--color-success: #64BEB4;
+	--grid-maxWidth: 120rem;
+	--grid-gutter: 2rem;
+	--font-size: 1.6rem;
+	--font-color: #A2B8E0;
+	--font-family-sans: sans-serif;
+	--font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+	--safe-top: env(safe-area-inset-top, 0px);
+	--safe-right: env(safe-area-inset-right, 0px);
+	--safe-bottom: env(safe-area-inset-bottom, 0px);
+	--safe-left: env(safe-area-inset-left, 0px);
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.preload * {
+	-webkit-transition: none !important;
+	     -o-transition: none !important;
+	   -moz-transition: none !important;
+	        transition: none !important;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+}
+
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-signin .checkbox {
+	font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+	z-index: 2;
+}
+
+.form-signin input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.info-card {
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.info-card-box {
+	padding: 1rem 2rem;
+	border-radius: 4px;
+	background: var(--bg-color);
+	-webkit-box-shadow: 0 1px 3px var(--color-grey);
+	box-shadow:0 1px 3px var(--color-grey)
+}
+
+.info-card.hidden {
+		padding: 0;
+		-webkit-box-shadow: 0 0 0 #FFFFFF00;
+		        box-shadow: 0 0 0 #FFFFFF00;
+		   -moz-box-shadow: 0 0 0 #FFFFFF00;
+		        box-shadow: 0 0 0 #FFFFFF00;
+		        box-shadow: 0 0 0 #FFFFFF00;
+		-webkit-border-radius: 0;
+		        border-radius: 0;
+		   -moz-border-radius: 0;
+		        border-radius: 0;
+		        border-radius: 0;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+}
+
+.info-card.popup {
+	-webkit-animation: infocard-popup 4s forwards;
+	   -moz-animation: infocard-popup 4s forwards;
+	     -o-animation: infocard-popup 4s forwards;
+	        animation: infocard-popup 4s forwards;
+}
+
+.info-card.success {
+	background-color: var(--color-success);
+}
+
+.info-card.error {
+	background-color: var(--color-error);
+}
+
+@-webkit-keyframes infocard-popup {
+	from {
+		padding: 0;
+		-webkit-border-radius: 0;
+		        border-radius: 0;
+		-webkit-box-shadow: 0 0 0 #FFFFFF00;
+		        box-shadow: 0 0 0 #FFFFFF00;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+	}
+	5%  {
+		padding: 1rem 0 1rem 0;
+		-webkit-border-radius: 4px;
+		        border-radius: 4px;
+		-webkit-box-shadow: 0 1px 3px var(--color-grey);
+		        box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFF10;
+		max-height: 5em;
+	}
+	10%  {
+		padding: 1rem 0 1rem 0;
+		-webkit-border-radius: 4px;
+		        border-radius: 4px;
+		-webkit-box-shadow: 0 1px 3px var(--color-grey);
+		        box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFFFF;
+		max-height: 5em;
+	}
+	80%  {
+		padding: 1rem 0 1rem 0;
+		-webkit-border-radius: 4px;
+		        border-radius: 4px;
+		-webkit-box-shadow: 0 1px 3px var(--color-grey);
+		        box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFFFF;
+		max-height: 5em;
+	}
+	90%  {
+		padding: 1rem 0 1rem 0;
+		-webkit-border-radius: 4px;
+		        border-radius: 4px;
+		-webkit-box-shadow: 0 1px 3px var(--color-grey);
+		        box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFF10;
+		max-height: 5em;
+	}
+	to {
+		padding: 0;
+		-webkit-border-radius: 0;
+		        border-radius: 0;
+		-webkit-box-shadow: 0 0 0 #FFFFFF00;
+		        box-shadow: 0 0 0 #FFFFFF00;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+	}
+}
+
+@-moz-keyframes infocard-popup {
+	from {
+		padding: 0;
+		-moz-border-radius: 0;
+		     border-radius: 0;
+		-moz-box-shadow: 0 0 0 #FFFFFF00;
+		     box-shadow: 0 0 0 #FFFFFF00;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+	}
+	5%  {
+		padding: 1rem 0 1rem 0;
+		-moz-border-radius: 4px;
+		     border-radius: 4px;
+		-moz-box-shadow: 0 1px 3px var(--color-grey);
+		     box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFF10;
+		max-height: 5em;
+	}
+	10%  {
+		padding: 1rem 0 1rem 0;
+		-moz-border-radius: 4px;
+		     border-radius: 4px;
+		-moz-box-shadow: 0 1px 3px var(--color-grey);
+		     box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFFFF;
+		max-height: 5em;
+	}
+	80%  {
+		padding: 1rem 0 1rem 0;
+		-moz-border-radius: 4px;
+		     border-radius: 4px;
+		-moz-box-shadow: 0 1px 3px var(--color-grey);
+		     box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFFFF;
+		max-height: 5em;
+	}
+	90%  {
+		padding: 1rem 0 1rem 0;
+		-moz-border-radius: 4px;
+		     border-radius: 4px;
+		-moz-box-shadow: 0 1px 3px var(--color-grey);
+		     box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFF10;
+		max-height: 5em;
+	}
+	to {
+		padding: 0;
+		-moz-border-radius: 0;
+		     border-radius: 0;
+		-moz-box-shadow: 0 0 0 #FFFFFF00;
+		     box-shadow: 0 0 0 #FFFFFF00;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+	}
+}
+
+@-o-keyframes infocard-popup {
+	from {
+		padding: 0;
+		border-radius: 0;
+		box-shadow: 0 0 0 #FFFFFF00;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+	}
+	5%  {
+		padding: 1rem 0 1rem 0;
+		border-radius: 4px;
+		box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFF10;
+		max-height: 5em;
+	}
+	10%  {
+		padding: 1rem 0 1rem 0;
+		border-radius: 4px;
+		box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFFFF;
+		max-height: 5em;
+	}
+	80%  {
+		padding: 1rem 0 1rem 0;
+		border-radius: 4px;
+		box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFFFF;
+		max-height: 5em;
+	}
+	90%  {
+		padding: 1rem 0 1rem 0;
+		border-radius: 4px;
+		box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFF10;
+		max-height: 5em;
+	}
+	to {
+		padding: 0;
+		border-radius: 0;
+		box-shadow: 0 0 0 #FFFFFF00;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+	}
+}
+
+@keyframes infocard-popup {
+	from {
+		padding: 0;
+		-webkit-border-radius: 0;
+		   -moz-border-radius: 0;
+		        border-radius: 0;
+		-webkit-box-shadow: 0 0 0 #FFFFFF00;
+		   -moz-box-shadow: 0 0 0 #FFFFFF00;
+		        box-shadow: 0 0 0 #FFFFFF00;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+	}
+	5%  {
+		padding: 1rem 0 1rem 0;
+		-webkit-border-radius: 4px;
+		   -moz-border-radius: 4px;
+		        border-radius: 4px;
+		-webkit-box-shadow: 0 1px 3px var(--color-grey);
+		   -moz-box-shadow: 0 1px 3px var(--color-grey);
+		        box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFF10;
+		max-height: 5em;
+	}
+	10%  {
+		padding: 1rem 0 1rem 0;
+		-webkit-border-radius: 4px;
+		   -moz-border-radius: 4px;
+		        border-radius: 4px;
+		-webkit-box-shadow: 0 1px 3px var(--color-grey);
+		   -moz-box-shadow: 0 1px 3px var(--color-grey);
+		        box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFFFF;
+		max-height: 5em;
+	}
+	80%  {
+		padding: 1rem 0 1rem 0;
+		-webkit-border-radius: 4px;
+		   -moz-border-radius: 4px;
+		        border-radius: 4px;
+		-webkit-box-shadow: 0 1px 3px var(--color-grey);
+		   -moz-box-shadow: 0 1px 3px var(--color-grey);
+		        box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFFFF;
+		max-height: 5em;
+	}
+	90%  {
+		padding: 1rem 0 1rem 0;
+		-webkit-border-radius: 4px;
+		   -moz-border-radius: 4px;
+		        border-radius: 4px;
+		-webkit-box-shadow: 0 1px 3px var(--color-grey);
+		   -moz-box-shadow: 0 1px 3px var(--color-grey);
+		        box-shadow: 0 1px 3px var(--color-grey);
+		opacity: 1;
+		color: #FFFFFF10;
+		max-height: 5em;
+	}
+	to {
+		padding: 0;
+		-webkit-border-radius: 0;
+		   -moz-border-radius: 0;
+		        border-radius: 0;
+		-webkit-box-shadow: 0 0 0 #FFFFFF00;
+		   -moz-box-shadow: 0 0 0 #FFFFFF00;
+		        box-shadow: 0 0 0 #FFFFFF00;
+		opacity: 0;
+		color: #FFFFFF00;
+		max-height: 0;
+	}
+}

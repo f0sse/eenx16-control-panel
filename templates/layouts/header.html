@@ -1,0 +1,63 @@
+<!--
+header.html
+lucas@pamorana.net (2024)
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+{{ define "layouts/header.html" }}
+<!DOCTYPE html>
+<html lang="en">
+	<!-- heading -->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<title>Control Panel</title>
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+		<style>
+			.bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			}
+			@media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+					font-size: 3.5rem;
+				}
+			}
+		</style>
+		<link href="/css/dashboard.css" rel="stylesheet">
+	</head>
+	<!-- body -->
+	<body>
+	<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+		<a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Kandidatarbete</a>
+		<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<input class="form-control form-control w-100" type="text" placeholder="{{.username}}" aria-label="User" readonly>
+		<div class="navbar-nav">
+			<div class="nav-item text-nowrap">
+				<a class="nav-link px-3" href="/logout">Sign out</a>
+			</div>
+		</div>
+	</header>
+	<div class="container-fluid">
+		<div class="row">
+		{{ template "layouts/sidebar.html" .}}
+		<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+{{ end }}

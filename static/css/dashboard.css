@@ -1,0 +1,418 @@
+/*
+ * dashboard.css
+ * lucas@pamorana.net (2024)
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+body {
+	font-size: .875rem;
+}
+
+.feather {
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100; /* Behind the navbar */
+	padding: 48px 0 0; /* Height of navbar */
+	box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+	.sidebar {
+		top: 5rem;
+	}
+}
+
+.sidebar-sticky {
+	position: relative;
+	top: 0;
+	height: calc(100vh - 48px);
+	padding-top: .5rem;
+	overflow-x: hidden;
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+	font-weight: 500;
+	color: #333;
+}
+
+.sidebar .nav-link .feather {
+	margin-right: 4px;
+	color: #727272;
+}
+
+.sidebar .nav-link.active {
+	color: #2470dc;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+	color: inherit;
+}
+
+.sidebar-heading {
+	font-size: .75rem;
+	text-transform: uppercase;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	font-size: 1rem;
+	background-color: rgba(0, 0, 0, .25);
+	box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+	top: .25rem;
+	right: 1rem;
+}
+
+.navbar .form-control {
+	padding: .75rem 1rem;
+	border-width: 0;
+	border-radius: 0;
+}
+
+.form-control-dark {
+	color: #fff;
+	background-color: rgba(255, 255, 255, .1);
+	border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+	border-color: transparent;
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+/*
+ * Control Panel
+ */
+
+
+.info-box {
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+	border-radius: 0.25rem;
+	background-color: #fff;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-bottom: 1rem;
+	min-height: 80px;
+	padding: .5rem;
+	position: relative;
+	width: 100%;
+}
+
+.info-box .progress {
+	background-color: rgba(0, 0, 0, 0.125);
+	height: 2px;
+	margin: 5px 0;
+}
+
+.info-box .progress .progress-bar {
+	background-color: #fff;
+}
+
+.info-box .info-box-icon {
+	border-radius: 0.25rem;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 1.875rem;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	text-align: center;
+	width: 70px;
+}
+
+.info-box .info-box-icon > img {
+	max-width: 100%;
+}
+
+.info-box .info-box-content {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	line-height: 1.8;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding: 0 10px;
+}
+
+.info-box .info-box-number {
+	display: block;
+	margin-top: .25rem;
+	font-weight: 700;
+}
+
+.info-box .progress-description,
+.info-box .info-box-text {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.info-box .info-box .bg-primary,
+.info-box .info-box .bg-gradient-primary {
+	color: #fff;
+}
+
+.info-box .info-box .bg-primary .progress-bar,
+.info-box .info-box .bg-gradient-primary .progress-bar {
+	background-color: #fff;
+}
+
+.info-box .info-box .bg-secondary,
+.info-box .info-box .bg-gradient-secondary {
+	color: #fff;
+}
+
+.info-box .info-box .bg-secondary .progress-bar,
+.info-box .info-box .bg-gradient-secondary .progress-bar {
+	background-color: #fff;
+}
+
+.info-box .info-box .bg-success,
+.info-box .info-box .bg-gradient-success {
+	color: #fff;
+}
+
+.info-box .info-box .bg-success .progress-bar,
+.info-box .info-box .bg-gradient-success .progress-bar {
+	background-color: #fff;
+}
+
+.info-box .info-box .bg-info,
+.info-box .info-box .bg-gradient-info {
+	color: #fff;
+}
+
+.info-box .info-box .bg-info .progress-bar,
+.info-box .info-box .bg-gradient-info .progress-bar {
+	background-color: #fff;
+}
+
+.info-box .info-box .bg-warning,
+.info-box .info-box .bg-gradient-warning {
+	color: #1f2d3d;
+}
+
+.info-box .info-box .bg-warning .progress-bar,
+.info-box .info-box .bg-gradient-warning .progress-bar {
+	background-color: #1f2d3d;
+}
+
+.info-box .info-box .bg-danger,
+.info-box .info-box .bg-gradient-danger {
+	color: #fff;
+}
+
+.info-box .info-box .bg-danger .progress-bar,
+.info-box .info-box .bg-gradient-danger .progress-bar {
+	background-color: #fff;
+}
+
+.info-box .info-box .bg-light,
+.info-box .info-box .bg-gradient-light {
+	color: #1f2d3d;
+}
+
+.info-box .info-box .bg-light .progress-bar,
+.info-box .info-box .bg-gradient-light .progress-bar {
+	background-color: #1f2d3d;
+}
+
+.info-box .info-box .bg-dark,
+.info-box .info-box .bg-gradient-dark {
+	color: #fff;
+}
+
+.info-box .info-box .bg-dark .progress-bar,
+.info-box .info-box .bg-gradient-dark .progress-bar {
+	background-color: #fff;
+}
+
+.info-box .info-box-more {
+	display: block;
+}
+
+.info-box .progress-description {
+	margin: 0;
+}
+
+@media (min-width: 768px) {
+	.col-xl-2 .info-box .progress-description,
+	.col-lg-2 .info-box .progress-description,
+	.col-md-2 .info-box .progress-description {
+		display: none;
+	}
+	.col-xl-3 .info-box .progress-description,
+	.col-lg-3 .info-box .progress-description,
+	.col-md-3 .info-box .progress-description {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.col-xl-2 .info-box .progress-description,
+	.col-lg-2 .info-box .progress-description,
+	.col-md-2 .info-box .progress-description {
+		font-size: 0.75rem;
+		display: block;
+	}
+	.col-xl-3 .info-box .progress-description,
+	.col-lg-3 .info-box .progress-description,
+	.col-md-3 .info-box .progress-description {
+		font-size: 0.75rem;
+		display: block;
+	}
+}
+
+@media (min-width: 1200px) {
+	.col-xl-2 .info-box .progress-description,
+	.col-lg-2 .info-box .progress-description,
+	.col-md-2 .info-box .progress-description {
+		font-size: 1rem;
+		display: block;
+	}
+	.col-xl-3 .info-box .progress-description,
+	.col-lg-3 .info-box .progress-description,
+	.col-md-3 .info-box .progress-description {
+		font-size: 1rem;
+		display: block;
+	}
+}
+
+.dark-mode .info-box {
+	background-color: #343a40;
+	color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-primary,
+.dark-mode .info-box .info-box .bg-gradient-primary {
+	color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-primary .progress-bar,
+.dark-mode .info-box .info-box .bg-gradient-primary .progress-bar {
+	background-color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-secondary,
+.dark-mode .info-box .info-box .bg-gradient-secondary {
+	color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-secondary .progress-bar,
+.dark-mode .info-box .info-box .bg-gradient-secondary .progress-bar {
+	background-color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-success,
+.dark-mode .info-box .info-box .bg-gradient-success {
+	color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-success .progress-bar,
+.dark-mode .info-box .info-box .bg-gradient-success .progress-bar {
+	background-color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-info,
+.dark-mode .info-box .info-box .bg-gradient-info {
+	color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-info .progress-bar,
+.dark-mode .info-box .info-box .bg-gradient-info .progress-bar {
+	background-color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-warning,
+.dark-mode .info-box .info-box .bg-gradient-warning {
+	color: #1f2d3d;
+}
+
+.dark-mode .info-box .info-box .bg-warning .progress-bar,
+.dark-mode .info-box .info-box .bg-gradient-warning .progress-bar {
+	background-color: #1f2d3d;
+}
+
+.dark-mode .info-box .info-box .bg-danger,
+.dark-mode .info-box .info-box .bg-gradient-danger {
+	color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-danger .progress-bar,
+.dark-mode .info-box .info-box .bg-gradient-danger .progress-bar {
+	background-color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-light,
+.dark-mode .info-box .info-box .bg-gradient-light {
+	color: #1f2d3d;
+}
+
+.dark-mode .info-box .info-box .bg-light .progress-bar,
+.dark-mode .info-box .info-box .bg-gradient-light .progress-bar {
+	background-color: #1f2d3d;
+}
+
+.dark-mode .info-box .info-box .bg-dark,
+.dark-mode .info-box .info-box .bg-gradient-dark {
+	color: #fff;
+}
+
+.dark-mode .info-box .info-box .bg-dark .progress-bar,
+.dark-mode .info-box .info-box .bg-gradient-dark .progress-bar {
+	background-color: #fff;
+}
+
+textarea#program-output {
+	font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+	resize: none;
+	overflow: scroll;
+	overflow-wrap: normal;
+	white-space: pre;
+}

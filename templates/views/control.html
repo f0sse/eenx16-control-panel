@@ -1,0 +1,93 @@
+<!--
+control.html
+lucas@pamorana.net (2024)
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+{{ define "views/control.html"}}
+<!-- control.html -->
+{{ template "layouts/header.html"  .}}
+<!-- BEGIN CONTENT -->
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+	<h1 class="h2">Control Panel</h1>
+</div>
+<div class="container-fluid">
+	<form id="toggleButton" method="post" target="_self">
+		<div class="row">
+			<div class="col">
+				<div class="info-box mb-3">
+					<button id="heater-toggle" type="submit" class="btn btn-sm btn-info info-box-icon elevation-1" name="action" value="toggle">
+						<i class="fas fa-power-off"></i>
+					</button>
+
+					<div class="info-box-content">
+						<span class="info-box-text">Heater state</span>
+						<span id="heater-state" class="info-box-number">unknown</span>
+					</div>
+					<!-- /.info-box-content -->
+				</div>
+				<!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+
+			<div class="col">
+				<div class="info-box mb-3">
+					<div class="bg-warning info-box-icon elevation-1" name="action" value="none">
+						<i class="fas fa-bolt"></i>
+					</div>
+					<div class="info-box-content">
+						<span class="info-box-text">Energy [Wh]</span>
+						<span id="heater-energy" class="info-box-number">0</span>
+					</div>
+					<!-- /.info-box-content -->
+				</div>
+				<!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+
+			<div class="col">
+				<div class="info-box mb-3">
+					<div class="bg-danger info-box-icon elevation-1">
+						<i class="fas fa-fire"></i>
+					</div>
+					<div class="info-box-content">
+						<span class="info-box-text">Power [W]</span>
+						<span id="heater-power" class="info-box-number">0</span>
+					</div>
+					<!-- /.info-box-content -->
+				</div>
+				<!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+
+			<div class="col">
+				<div class="info-box mb-3">
+					<div class="bg-info info-box-icon elevation-1">
+						<i class="fas fa-temperature-half"></i>
+					</div>
+					<div class="info-box-content">
+						<span class="info-box-text">Temperature [°C]</span>
+						<span id="heater-temperature" class="info-box-number">0</span>
+					</div>
+					<!-- /.info-box-content -->
+				</div>
+				<!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+		</div>
+	</form>
+</div>
+<!-- END CONTENT -->
+{{ template "layouts/footer.html"  .}}
+{{ end }}

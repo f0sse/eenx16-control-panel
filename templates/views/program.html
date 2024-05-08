@@ -1,0 +1,57 @@
+<!--
+program.html
+lucas@pamorana.net (2024)
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+{{ define "views/program.html"}}
+<!-- program.html -->
+{{ template "layouts/header.html"  .}}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+	<h1 class="h2">Program</h1>
+</div>
+<div class="container-fluid">
+	<div class="col">
+		<div class="row">
+			<form id="toggleButton" method="post" target="_self">
+				<div class="col">
+					<div class="info-box mb-3">
+						<button id="program-toggle" type="submit" class="btn btn-sm btn-info info-box-icon elevation-1" name="action" value="toggle">
+							<i class="fas fa-power-off"></i>
+						</button>
+
+						<div class="info-box-content">
+							<span class="info-box-text">Control Program</span>
+							<span id="program-running" class="info-box-number">unknown</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+			</form>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label for="program-output" class="font-weight-bold">Program output:</label>
+					<textarea id="program-output" class="form-control-sm" style="width:100%" readonly="readonly" rows="20"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END CONTENT -->
+{{ template "layouts/footer.html"  .}}
+{{ end }}
