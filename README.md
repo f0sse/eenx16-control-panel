@@ -1,3 +1,5 @@
+Project files for my bachelors thesis project "Demand Side Flexibility in Electrical Heating Systems" at Chalmers 2024.
+
 # Control Panel
 
 A tiny control panel written in Go, to control the heater in the Björkö
